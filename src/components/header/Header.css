@@ -1,0 +1,24 @@
+
+                                                /* HEADER SECTION  */
+
+header{
+    display: flex;
+    width:1000px;
+    justify-content: space-between;
+    margin: 0px auto;  
+    /* border: 1px solid red; */
+}
+header > .logo{
+    color: #e74c3c;
+    /* border: 1px solid green; */
+}
+header > .countries__list{
+    /* border: 1px solid blue; */
+    margin-top:15px; 
+}
+.countries__list__dropdown{
+    background-color: #fff;
+      
+}
+
+
