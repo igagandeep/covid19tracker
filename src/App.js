@@ -1,17 +1,19 @@
 import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 import './App.css';
 import Header from './components/header/Header';
-import axios from 'axios';
+import Infobox from './components/infobox/Infobox';
 
 function App() {
 
   const [countries, setCountries] = useState([]);
-  const [country, setCountry] = useState("worldwide");
+  const [country, setInputCountry] = useState("worldwide");
 
   useEffect(() => {
     axios.get(`https://disease.sh/v3/covid-19/all`)
     .then(res => {
       console.log(res.data);
+      
     })
   }, []);
 
@@ -20,7 +22,6 @@ function App() {
     const getCountriesData = () => {
       axios.get(`https://disease.sh/v3/covid-19/countries`)
       .then(res => {
-        console.log(res.data);
         const countries = res.data.map(country => ({
             name : country.country,
             value : country.countryInfo.iso2,
@@ -38,12 +39,28 @@ function App() {
 
 const onCountryChange = (e) => {
     const countryCode = e.target.value;
-    setCountry(countryCode);
+    if(countryCode === 'worldwide'){
+      axios.get(`https://disease.sh/v3/covid-19/all`)
+      .then(res => {
+        console.log(res.data);
+    })
+    } else{
+      axios.get(`https://disease.sh/v3/covid-19/countries/${countryCode}`)
+      .then(res => {
+        console.log(res.data);
+    })
+    } 
+    setInputCountry(countryCode);  
 }
 
   return (
     <div className="App">
-      <Header  country={country} countries={countries} onCountryChange={onCountryChange}/>
+      <Header   country={country} countries={countries} onCountryChange={onCountryChange}/>
+      <div className="app__stats">
+        <Infobox />
+        <Infobox />
+        <Infobox />
+      </div>
     </div>
   );
 }

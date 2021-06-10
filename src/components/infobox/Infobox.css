@@ -1,0 +1,9 @@
+.info{
+    /* clear:right; */
+    display: flex;
+    width:320px;
+    justify-content: space-between;
+    border: 1px solid pink;
+
+
+}

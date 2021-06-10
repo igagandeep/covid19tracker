@@ -2,7 +2,7 @@ import React from 'react';
 import  './Header.css';
 import { FormControl, Select, MenuItem } from '@material-ui/core';
 
-const  Header = ({country,countries, onCountryChange}) =>  {
+const  Header = ({countries,country, onCountryChange}) =>  {
     
     return (
         <header>
