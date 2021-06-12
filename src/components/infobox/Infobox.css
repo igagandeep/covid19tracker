@@ -2,8 +2,30 @@
     /* clear:right; */
     display: flex;
     width:320px;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     border: 1px solid pink;
-
-
+    /* flex:1 */
 }
+
+.infoBox--selected{
+    border-top:10px solid greenyellow;
+}
+
+.infoBox--red{
+    border-color:red;
+}
+
+.infoBox--cases{
+    color:red
+}
+.infoBox--green--cases{
+    color:greenyellow;
+}
+
+.infoBox__total {
+    color: #6c757d;
+    font-weight: 700 !important;
+    font-size: 0.8rem !important;
+    margin-top: 15px !important;
+  }
+  
