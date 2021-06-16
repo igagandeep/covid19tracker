@@ -6,19 +6,22 @@ header{
     width:1070px;
     justify-content: space-between;
     margin: 0px auto;  
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 header > .logo{
     color: #e74c3c;
-    border: 1px solid green;
 }
 header > .countries__list{
-    border: 1px solid blue;
     margin-top:15px; 
 }
 .countries__list__dropdown{
     background-color: #fff;
-      
 }
 
 
+
+@media only screen and (max-width:990px){
+    header{
+        width:100%!important;
+}
+}
