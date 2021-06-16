@@ -3,16 +3,32 @@ body{
 
 }
 .App{
-  border: 1px solid black;
+  padding:10px;
+  box-shadow: 2px 4px 0px 1px rgba(0,0,0,0.19);
 }
 
 .app__stats{
   display: flex;
-  border: 1px solid red;
-  margin:50px auto;
+  margin:0px auto;
   width:1077px;
   justify-content: space-between;
 }
 
+.app__chart{
+  display: flex;
+  width:1077px;
+  margin:50px auto;
+  justify-content: center;
+  box-shadow: 0px 1px 0px 1px rgba(0,0,0,0.19);
+}
 
 
+@media (max-width:990px){
+  
+  .app__stats{
+    width:100%;
+  }
+  .app__chart{
+    width:100%;
+  }
+}

@@ -1,27 +1,28 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {prettyPrintStat} from "./util";
-
+import numeral from 'numeral';
 import './App.css';
 import Header from './components/header/Header';
 import Infobox from './components/infobox/Infobox';
-import numeral from 'numeral';
+import LineChart from './components/charts/LineChart';
 
 
 function App() {
-
   const [countries, setCountries] = useState([]);
   const [country, setInputCountry] = useState("worldwide");
+  const [countryName, setCountryName] = useState("worldwide");
   const [countryInfo, setCountryInfo]  = useState({});
   const [caseType, setCaseType] = useState('cases');
+  
+  // This hook will render the global data
   useEffect(() => {
     axios.get(`https://disease.sh/v3/covid-19/all`)
     .then(res => {
-      console.log(res.data);
-      setCountryInfo(res.data);
-      
+      setCountryInfo(res.data);   
     })
   }, []);
+
 
   useEffect(() => {
         //  This function will show list of countries data
@@ -42,24 +43,22 @@ function App() {
   }, []);
 
 // This function will select the specific country and changes info accordingly
-
 const onCountryChange = (e) => {
     const countryCode = e.target.value;
     if(countryCode === 'worldwide'){
       axios.get(`https://disease.sh/v3/covid-19/all`)
       .then(res => {
-        console.log(res.data);
+        setCountryName("worldwide");
         setCountryInfo(res.data)
     })
     } else{
       axios.get(`https://disease.sh/v3/covid-19/countries/${countryCode}`)
       .then(res => {
-        console.log(res.data);
+        setCountryName(res.data.country);
         setCountryInfo(res.data);
     })
     } 
     setInputCountry(countryCode);
-      
 }
 
   return (
@@ -94,6 +93,9 @@ const onCountryChange = (e) => {
                 style={{color:'red'}}
         />
        
+      </div>
+      <div className="app__chart">
+          <LineChart caseType={caseType}  countryName={countryName}/>
       </div>
     </div>
   );
