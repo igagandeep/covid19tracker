@@ -1,13 +1,14 @@
 import React from 'react';
 import  './Header.css';
 import { FormControl, Select, MenuItem } from '@material-ui/core';
+import logo from '../../assets/logo (2).png';
 
 const  Header = ({countries,country, onCountryChange}) =>  {
     
     return (
         <header>
             <div className="logo">
-                <h1>COVID-19 Tracker</h1>
+                <img src={logo} width="300px" alt="logo"/>
             </div>
             <div className="countries__list">
                 <FormControl className="countries__list__dropdown">
