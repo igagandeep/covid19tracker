@@ -4,7 +4,6 @@ body{
 }
 .App{
   padding:10px;
-  box-shadow: 2px 4px 0px 1px rgba(0,0,0,0.19);
 }
 
 .app__stats{
@@ -30,5 +29,11 @@ body{
   }
   .app__chart{
     width:100%;
+  }
+}
+
+@media only screen and (max-width:415px){
+  .app__stats{
+    flex-direction: column;
   }
 }

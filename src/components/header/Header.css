@@ -5,12 +5,9 @@ header{
     display: flex;
     width:1070px;
     justify-content: space-between;
-    margin: 0px auto;  
-    /* border: 1px solid red; */
+    margin: 8px auto;  
 }
-header > .logo{
-    color: #e74c3c;
-}
+
 header > .countries__list{
     margin-top:15px; 
 }
@@ -25,3 +22,10 @@ header > .countries__list{
         width:100%!important;
 }
 }
+
+@media only screen and (max-width:415px){
+    .logo h1{
+        font-size: x-large;
+}
+}
+
