@@ -1,8 +1,8 @@
 import React from "react";
 import {Doughnut} from "react-chartjs-2";
-import "./Test.css";
+import "./Doughnut.css";
 
-function Test({ countryInfo}) {
+function DoughNut({ countryInfo}) {
 
   console.log(countryInfo);
   const data = {
@@ -10,9 +10,9 @@ function Test({ countryInfo}) {
     datasets: [
       {
         label: "cases",
-        data: [countryInfo.cases, countryInfo.recovered,countryInfo.deaths],
+        data: [countryInfo.recovered,countryInfo.cases,countryInfo.deaths],
         backgroundColor: [
-          'red',
+          '#cc1034',
           'greenyellow',
           'red'
         ]
@@ -28,4 +28,4 @@ function Test({ countryInfo}) {
   );
 }
 
-export default Test;
+export default DoughNut;

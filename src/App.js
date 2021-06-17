@@ -6,8 +6,8 @@ import './App.css';
 import Header from './components/header/Header';
 import Infobox from './components/infobox/Infobox';
 import LineChart from './components/charts/LineChart';
-// import Test from './components/charts/test';
-import {Card, CardContent, Typography}  from '@material-ui/core';
+import Doughnut from './components/charts/Doughnut';
+import {Card, CardContent}  from '@material-ui/core';
 import Table from "./components/table/Table";
 
 function App() {
@@ -111,20 +111,21 @@ const onCountryChange = (e) => {
         {/* RIGHT SECTION OF THE APP */}
 
         <Card className="app__right">
-        <CardContent>
-          <div className="app__information">
-            <h3>Live Cases by Country</h3>
-            <Table countries={tableData} />
-            {/* <h3>Worldwide new {casesType}</h3> */}
-            {/* <LineGraph casesType={casesType} /> */}
-          </div>
-        </CardContent>
+          <CardContent>
+            <div className="app__information">
+              <h3>Live Cases by Country</h3>
+              <Table countries={tableData} />
+              {/* <h3>Worldwide new {casesType}</h3> */}
+              {/* <LineGraph casesType={casesType} /> */}
+            </div>
+          </CardContent>
+          <h3>Worldwide new Cases</h3>
+          <Doughnut countryInfo={countryInfo}/>
       </Card>
 
 
 
-    {/* <Test countryInfo={countryInfo}/> */}
-
+      
     </div>
   );
 }
