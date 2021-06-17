@@ -17,3 +17,10 @@
   .table tr:nth-of-type(odd) {
     background-color: #f3f2f8;
   }
+
+  @media only screen and (max-width: 990px) {
+    .table {
+      width:100%;
+    }
+  }
+  
