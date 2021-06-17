@@ -9,7 +9,7 @@ header{
 }
 
 header > .countries__list{
-    margin-top:15px; 
+    margin-top:0px; 
 }
 .countries__list__dropdown{
     background-color: #fff;

@@ -6,7 +6,7 @@ import './App.css';
 import Header from './components/header/Header';
 import Infobox from './components/infobox/Infobox';
 import LineChart from './components/charts/LineChart';
-
+import Test from './components/charts/Test';
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -19,7 +19,8 @@ function App() {
   useEffect(() => {
     axios.get(`https://disease.sh/v3/covid-19/all`)
     .then(res => {
-      setCountryInfo(res.data);   
+      console.log(res.data);
+      setCountryInfo(res.data);
     })
   }, []);
 
@@ -97,8 +98,13 @@ const onCountryChange = (e) => {
       <div className="app__chart">
           <LineChart caseType={caseType}  countryName={countryName}/>
       </div>
+
+    <Test countryInfo={countryInfo}/>
+
     </div>
   );
 }
+
+
 
 export default App;
