@@ -8,7 +8,7 @@ const  Header = ({countries,country, onCountryChange}) =>  {
     return (
         <header>
             <div className="logo">
-                <img src={logo} width="300px" alt="logo"/>
+                <img src={logo} width="280px" alt="logo"/>
             </div>
             <div className="countries__list">
                 <FormControl className="countries__list__dropdown">
