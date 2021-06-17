@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import {prettyPrintStat} from "./util";
+import {sortData, prettyPrintStat} from "./util";
 import numeral from 'numeral';
 import './App.css';
 import Header from './components/header/Header';
@@ -8,6 +8,7 @@ import Infobox from './components/infobox/Infobox';
 import LineChart from './components/charts/LineChart';
 // import Test from './components/charts/test';
 import {Card, CardContent, Typography}  from '@material-ui/core';
+import Table from "./components/table/Table";
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -15,7 +16,7 @@ function App() {
   const [countryName, setCountryName] = useState("worldwide");
   const [countryInfo, setCountryInfo]  = useState({});
   const [caseType, setCaseType] = useState('cases');
-  
+  const [tableData, setTableData] = useState([]);  
   // This hook will render the global data
   useEffect(() => {
     axios.get(`https://disease.sh/v3/covid-19/all`)
@@ -36,6 +37,10 @@ function App() {
             value : country.countryInfo.iso2,
         }))
         setCountries(countries);
+        
+        let sortedData = sortData(res.data);
+        
+        setTableData(sortedData);
       })
       .catch(error => {
         console.log(error);
@@ -100,7 +105,7 @@ const onCountryChange = (e) => {
       <div className="app__chart">
           <LineChart caseType={caseType}  countryName={countryName}/>
       </div>
-      
+
       </div>
 
         {/* RIGHT SECTION OF THE APP */}
@@ -109,7 +114,7 @@ const onCountryChange = (e) => {
         <CardContent>
           <div className="app__information">
             <h3>Live Cases by Country</h3>
-            {/* <Table countries={tableData} /> */}
+            <Table countries={tableData} />
             {/* <h3>Worldwide new {casesType}</h3> */}
             {/* <LineGraph casesType={casesType} /> */}
           </div>

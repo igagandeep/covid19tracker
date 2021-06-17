@@ -14,18 +14,3 @@ header > .countries__list{
 .countries__list__dropdown{
     background-color: #fff;
 }
-
-
-
-/* @media only screen and (max-width:990px){
-    header{
-        width:100%!important;
-}
-}
-
-@media only screen and (max-width:415px){
-    .logo h1{
-        font-size: x-large;
-}
-} */
-
