@@ -6,7 +6,8 @@ import './App.css';
 import Header from './components/header/Header';
 import Infobox from './components/infobox/Infobox';
 import LineChart from './components/charts/LineChart';
-import Test from './components/charts/Test';
+// import Test from './components/charts/test';
+import {Card, CardContent, Typography}  from '@material-ui/core';
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -64,6 +65,7 @@ const onCountryChange = (e) => {
 
   return (
     <div className="App">
+    <div className="app__left">
       <Header   country={country} countries={countries} onCountryChange={onCountryChange}/>
       <div className="app__stats">
         <Infobox  
@@ -92,14 +94,31 @@ const onCountryChange = (e) => {
                 cases={countryInfo.todayDeaths}
                 total = {numeral(countryInfo.deaths).format("0.0a")} 
                 style={{color:'red'}}
-        />
-       
+        />       
       </div>
+      
       <div className="app__chart">
           <LineChart caseType={caseType}  countryName={countryName}/>
       </div>
+      
+      </div>
 
-    <Test countryInfo={countryInfo}/>
+        {/* RIGHT SECTION OF THE APP */}
+
+        <Card className="app__right">
+        <CardContent>
+          <div className="app__information">
+            <h3>Live Cases by Country</h3>
+            {/* <Table countries={tableData} /> */}
+            {/* <h3>Worldwide new {casesType}</h3> */}
+            {/* <LineGraph casesType={casesType} /> */}
+          </div>
+        </CardContent>
+      </Card>
+
+
+
+    {/* <Test countryInfo={countryInfo}/> */}
 
     </div>
   );

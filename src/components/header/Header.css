@@ -3,9 +3,9 @@
 
 header{
     display: flex;
-    width:1070px;
+    align-items: center;
+    margin-bottom: 20px;
     justify-content: space-between;
-    margin: 8px auto;  
 }
 
 header > .countries__list{
@@ -17,7 +17,7 @@ header > .countries__list{
 
 
 
-@media only screen and (max-width:990px){
+/* @media only screen and (max-width:990px){
     header{
         width:100%!important;
 }
@@ -27,5 +27,5 @@ header > .countries__list{
     .logo h1{
         font-size: x-large;
 }
-}
+} */
 
