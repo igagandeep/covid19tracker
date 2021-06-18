@@ -22,6 +22,7 @@ body {
   justify-content: space-between;
 }
 
+
 .app__information > h3 {
   color: #6a5d5d;
   font-weight: 400;
@@ -42,4 +43,19 @@ body {
   .App {
     flex-direction: column;
   }
+  
+.app__right{
+  margin-top: 30px;
 }
+}
+
+@media (max-width: 360px) {
+  .app__stats {
+    flex-direction: column;
+  }
+  .app__left{
+    flex:0.7!important;
+  }
+}
+
+

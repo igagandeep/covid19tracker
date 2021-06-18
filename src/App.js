@@ -119,8 +119,7 @@ const onCountryChange = (e) => {
               {/* <LineGraph casesType={casesType} /> */}
             </div>
           </CardContent>
-          <h3>Worldwide new Cases</h3>
-          <Doughnut countryInfo={countryInfo}/>
+          <Doughnut countryName={countryName}/>
       </Card>
 
 

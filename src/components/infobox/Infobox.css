@@ -31,3 +31,19 @@
     font-size: 0.8rem !important;
     margin-top: 15px !important;
   }
+
+
+  @media (max-width: 576px) {
+    .info{
+      margin: 10px 0px;
+      text-align: center;
+    }
+    .infoBox__cases {
+      font-size:large;
+      
+    }
+    .title{
+      font-size: 14px!important;
+    }
+  }
+  

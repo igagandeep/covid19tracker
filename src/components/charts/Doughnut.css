@@ -1,3 +1,9 @@
-.donut > h3{
-     color:grey   
+.donut{
+     margin:0px 0px 20px 0px;
+}
+
+.donut > h2{
+     text-align: center;
+     color:grey;
+
 }

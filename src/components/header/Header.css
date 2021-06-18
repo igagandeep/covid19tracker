@@ -3,14 +3,27 @@
 
 header{
     display: flex;
-    align-items: center;
     margin-bottom: 20px;
     justify-content: space-between;
 }
 
-header > .countries__list{
-    margin-top:0px; 
-}
 .countries__list__dropdown{
     background-color: #fff;
+}
+
+@media (max-width: 480px) {
+    header{
+        flex-direction: column;
+        margin-bottom: 20px;
+        justify-content: center!important;
+
+    }
+    .logo{
+       margin: auto;
+        /* margin-left: 20px; */
+    }
+    .countries__list{
+        margin: auto;
+         /* margin-left: 100px; */
+    }
 }
