@@ -3,4 +3,4 @@ This App shows live cases around the world. It is built using React, Hooks and M
 
 Demo
 
-https://covid19-trackerapp.netlify.app/
+https://covidlivecasestracker.netlify.app/
